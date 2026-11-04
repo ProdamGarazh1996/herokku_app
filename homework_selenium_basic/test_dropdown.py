@@ -1,13 +1,14 @@
-from selenium import webdriver
+import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
-driver = webdriver.Chrome()
 
-try:
-    driver.get("https://the-internet.herokuapp.com/dropdown")
-    driver.maximize_window()
-    dropdown_element = driver.find_element(By.ID, "dropdown")
+@pytest.mark.basic
+@pytest.mark.smoke
+def test_add_remove_elements(browser):
+    browser.get("https://the-internet.herokuapp.com/dropdown")
+    browser.maximize_window()
+    dropdown_element = browser.find_element(By.ID, "dropdown")
     select = Select(dropdown_element)
     all_options = select.options
     assert len(all_options) > 0, "Дропдаун пуст, элементы не найдены!"
@@ -19,5 +20,3 @@ try:
             assert option.is_selected(), ('Доступный вариант "'
                                           + option.text +
                                           '" не был выбран')
-finally:
-    driver.quit()
