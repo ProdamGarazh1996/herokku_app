@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 @pytest.mark.parametrize('action, expected',
                          [(Keys.ARROW_UP, "1"),
                           (Keys.ARROW_DOWN, "-1")])
-def test_typos(browser, action, expected):
+def test_inputs(browser, action, expected):
     error_text = 'Значение инпут значения не соответсвует ожидаемому'
     browser.get("https://the-internet.herokuapp.com/inputs")
     browser.maximize_window()

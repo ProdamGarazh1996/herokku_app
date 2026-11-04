@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 @pytest.mark.basic
 @pytest.mark.smoke
-def test_add_remove_elements(browser):
+def test_typos(browser):
     correct_text = "Sometimes you'll see a typo, other times you won't."
     browser.get("https://the-internet.herokuapp.com/typos")
     WebDriverWait(browser, 30).until(

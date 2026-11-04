@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 
 @pytest.mark.advanced
 @pytest.mark.regression
-def test_add_remove_elements(browser):
+def test_checkboxes(browser):
     browser.get("https://the-internet.herokuapp.com/checkboxes")
     browser.maximize_window()
     checkboxes = browser.find_elements(By.CSS_SELECTOR, "[type='checkbox']")

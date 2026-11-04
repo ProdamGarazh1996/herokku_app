@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import Select
 
 @pytest.mark.basic
 @pytest.mark.smoke
-def test_add_remove_elements(browser):
+def test_dropdown(browser):
     browser.get("https://the-internet.herokuapp.com/dropdown")
     browser.maximize_window()
     dropdown_element = browser.find_element(By.ID, "dropdown")
