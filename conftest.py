@@ -6,7 +6,6 @@ from selenium.webdriver.chrome.options import Options
 
 @pytest.fixture
 def download_dir():
-    # Создаем папку 'downloads' в корне проекта
     path = Path(__file__).parent / "downloads"
     path.mkdir(exist_ok=True)
     return path
