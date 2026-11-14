@@ -3,7 +3,7 @@ from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
 
-@pytest.mark.advanced
+@pytest.mark.basic
 @pytest.mark.regression
 @pytest.mark.parametrize('action, expected',
                          [(Keys.ARROW_UP, "1"),

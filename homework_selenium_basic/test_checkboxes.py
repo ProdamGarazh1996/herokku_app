@@ -2,7 +2,7 @@ import pytest
 from selenium.webdriver.common.by import By
 
 
-@pytest.mark.advanced
+@pytest.mark.basic
 @pytest.mark.regression
 def test_checkboxes(browser):
     browser.get("https://the-internet.herokuapp.com/checkboxes")
