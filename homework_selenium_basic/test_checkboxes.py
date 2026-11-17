@@ -8,9 +8,9 @@ def test_checkboxes(browser):
     browser.get("https://the-internet.herokuapp.com/checkboxes")
     browser.maximize_window()
     checkboxes = browser.find_elements(By.CSS_SELECTOR, "[type='checkbox']")
-    if not checkboxes[0].is_selected():
-        checkboxes[0].click()
+    assert not checkboxes[0].is_selected(), "Первый чекбокс отмечен"
+    checkboxes[0].click()
     assert checkboxes[0].is_selected(), 'Первый чекбокс не был отмечен'
-    if checkboxes[1].is_selected():
-        checkboxes[1].click()
+    assert checkboxes[0].is_selected(), "Второй чекбокс не отмечен"
+    checkboxes[1].click()
     assert not checkboxes[1].is_selected(), 'Второй чекбокс остался отмеченым'
