@@ -11,3 +11,4 @@ def test_frames(browser):
     browser.switch_to.frame(iframe)
     text_element = browser.find_element(By.XPATH, "//body[@id='tinymce']//p")
     assert text_element.text == "Your content goes here."
+    browser.switch_to.default_content()

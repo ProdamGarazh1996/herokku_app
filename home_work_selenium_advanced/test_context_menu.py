@@ -17,3 +17,4 @@ def test_context_menu(browser):
     alert = wait.until(EC.alert_is_present())
     assert alert.text == 'You selected a context menu', \
         "Текст на алерте не соответствует ожидаемому"
+    alert.accept()
